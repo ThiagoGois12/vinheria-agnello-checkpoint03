@@ -1,8 +1,8 @@
 // Array de objetos representando os vinhos da vinícola
 const vinhos = [
-    { nome: 'Vinho 1', tipo: 'tinto', safra: 2020, estoque: 10 },
-    { nome: 'Vinho 2', tipo: 'branco', safra: 2019, estoque: 3 },
-    { nome: 'Vinho 3', tipo: 'rosé', safra: 2021, estoque: 7 }
+    { nome: 'Vinho Tinto', tipo: 'tinto', safra: 2020, estoque: 10 },
+    { nome: 'Vinho Branco', tipo: 'branco', safra: 2019, estoque: 3 },
+    { nome: 'Vinho Rosé', tipo: 'rosé', safra: 2021, estoque: 7 }
 ];
 
 // Função para adicionar novos vinhos ao array
@@ -31,8 +31,8 @@ function nomesEmCaixaAlta() {
 }
 
 // Adicionar novos vinhos
-adicionarVinho('Vinho 4', 'tinto', 2018, 2);
-adicionarVinho('Vinho 5', 'branco', 2020, 6);
+adicionarVinho('Vinho Tinto', 'Tinto', 2018, 2);
+adicionarVinho('Vinho Branco', 'branco', 2020, 6);
 
 // Exibir resultados
 console.log('Lista completa de vinhos:');
@@ -41,3 +41,10 @@ console.log('Vinhos com estoque abaixo de 5:');
 console.log(vinhosEstoqueBaixo());
 console.log('Estoque total da vinícola:', calcularEstoqueTotal());
 console.log('Nomes dos vinhos em caixa alta:', nomesEmCaixaAlta());
+
+// Exibir nomes dos vinhos e estoque total em um alert
+const nomesVinhos = vinhos.map(vinho => vinho.nome).join(', ');
+const estoqueTotal = calcularEstoqueTotal();
+vinhos.forEach(vinho => {
+    alert(`Nome do vinho: ${vinho.nome}\nEstoque: ${vinho.estoque}`);
+});
